@@ -16,18 +16,18 @@ venv/
 # Jupyter Notebook
 # =========================
 .ipynb_checkpoints/
-*.ipynb_checkpoints
 
 # =========================
-# Data files (VERY IMPORTANT for your project)
+# Data (CRITICAL for ML projects)
 # =========================
 data/raw/
 data/processed/
-*.csv
+
 *.parquet
 *.pkl
 
-# (If you WANT to keep small sample data, remove *.csv rule)
+# ⚠️ DO NOT ignore all CSV unless you are 100% sure
+# *.csv   <-- removed intentionally
 
 # =========================
 # Logs
@@ -54,7 +54,7 @@ Thumbs.db
 .ruff_cache/
 
 # =========================
-# Model outputs (ML / NLP)
+# Models
 # =========================
 models/
 *.model
@@ -62,11 +62,9 @@ models/
 *.joblib
 
 # =========================
-# Large outputs from EDA
+# Outputs
 # =========================
 *.png
 *.jpg
 *.jpeg
 *.svg
-
-# (optional: if you want to keep plots, remove this rule)
