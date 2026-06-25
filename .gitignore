@@ -1,0 +1,72 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# virtual environments
+venv/
+.env/
+.envrc/
+.venv/
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# =========================
+# Data files (VERY IMPORTANT for your project)
+# =========================
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.pkl
+
+# (If you WANT to keep small sample data, remove *.csv rule)
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Python tools
+# =========================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Model outputs (ML / NLP)
+# =========================
+models/
+*.model
+*.bin
+*.joblib
+
+# =========================
+# Large outputs from EDA
+# =========================
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# (optional: if you want to keep plots, remove this rule)

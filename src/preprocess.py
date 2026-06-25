@@ -1,168 +1,134 @@
 """
-Task 1: EDA helpers and complaint text preprocessing (memory-safe version)
+Task 1: EDA helpers and complaint preprocessing (clean + memory-safe version)
 """
 
 import re
 import pandas as pd
 
 
-# -----------------------------
-# Target product mapping
-# -----------------------------
+# =========================================================
+# 1. Target product mapping
+# =========================================================
+def map_product(product: str):
+    if pd.isna(product):
+        return None
+
+    p = product.lower()
+
+    if "credit card" in p:
+        return "Credit Card"
+
+    elif "personal loan" in p or "payday loan" in p or "title loan" in p:
+        return "Personal Loan"
+
+    elif "savings" in p or "checking" in p:
+        return "Savings Account"
+
+    elif "money transfer" in p or "virtual currency" in p or "money service" in p:
+        return "Money Transfer"
+
+    return None
+
+
 TARGET_PRODUCTS = {
-        "credit card": "Credit Card",
-    "credit card or prepaid card": "Credit Card",
-    "personal loans": "Personal Loan",
-    "payday loan, title loan, or personal loan": "Personal Loan",
-    "checking or savings account": "Savings Account",
-    "money transfers": "Money Transfer",
-    "money transfer, virtual currency, or money service": "Money Transfer",
+    "Credit Card",
+    "Personal Loan",
+    "Savings Account",
+    "Money Transfer"
 }
 
 
-# -----------------------------
-# Regex patterns
-# -----------------------------
+# =========================================================
+# 2. Cleaning patterns
+# =========================================================
 _BOILERPLATE = re.compile(
-    r"(i am writing to (file|submit|report) a complaint.*?[.!]"
-    r"|this is a complaint (about|regarding).*?[.!]"
-    r"|i would like to (file|report|submit).*?[.!])",
+    r"(i am writing to (file|submit|report).*?complaint\s|"
+    r"this is a complaint (about|regarding).*?\s|"
+    r"i would like to (file|report|submit).*?\s)",
     re.IGNORECASE,
 )
 
-_SPECIAL_CHARS = re.compile(r"[^a-z0-9\s.,!?;:()\-']")
+_SPECIAL_CHARS = re.compile(r"[^a-z0-9\s]")
 _WHITESPACE = re.compile(r"\s+")
 
 
-# -----------------------------
-# Load dataset (memory-safe)
-# -----------------------------
+# =========================================================
+# 3. Memory-safe loader
+# =========================================================
 def load_dataset(path: str, chunksize: int = 10000) -> pd.DataFrame:
-    """
-    Load dataset in chunks safely without crashing memory.
-    Only keeps required columns early.
-    """
 
-    required_cols = {"product", "consumer_complaint_narrative"}
+    required_cols = ["product", "consumer_complaint_narrative"]
+    chunks = []
 
-    processed_chunks = []
+    for chunk in pd.read_csv(path, chunksize=chunksize, dtype=str, low_memory=True):
 
-    for chunk in pd.read_csv(
-        path,
-        chunksize=chunksize,
-        dtype=str,
-        low_memory=True,
-    ):
-        # normalize column names
         chunk.columns = (
-            chunk.columns
-            .str.strip()
-            .str.lower()
-            .str.replace(" ", "_")
+            chunk.columns.str.strip().str.lower().str.replace(" ", "_")
         )
 
-        # keep only needed columns if present
-        available_cols = [c for c in required_cols if c in chunk.columns]
-
-        if len(available_cols) < 2:
+        if not all(col in chunk.columns for col in required_cols):
             continue
 
-        chunk = chunk[available_cols]
+        chunks.append(chunk[required_cols])
 
-        processed_chunks.append(chunk)
-
-    return pd.concat(processed_chunks, ignore_index=True)
+    return pd.concat(chunks, ignore_index=True) if chunks else pd.DataFrame()
 
 
-# -----------------------------
-# Find column helper
-# -----------------------------
-def _find_col(df: pd.DataFrame, candidates: list) -> str:
-    for col in candidates:
-        if col in df.columns:
-            return col
-    raise KeyError(f"Missing columns: {candidates}")
-
-
-# -----------------------------
-# Filter products
-# -----------------------------
+# =========================================================
+# 4. Filter products (FIXED ORDER + PRESERVE RAW)
+# =========================================================
 def filter_products(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Keep only target product categories and valid narratives.
-    """
 
     df = df.copy()
 
-    product_col = _find_col(df, ["product"])
-    narrative_col = _find_col(df, ["consumer_complaint_narrative", "narrative"])
+    raw_col = "consumer_complaint_narrative"
+    product_col = "product"
 
-    # normalize product mapping
-    df["product_category"] = (
-        df[product_col]
-        .str.lower()
-        .str.strip()
-        .map(TARGET_PRODUCTS)
-    )
+    # ✔ keep raw text column (IMPORTANT for EDA correctness)
+    df = df[df[raw_col].notna()]
+    df = df[df[raw_col].astype(str).str.strip().ne("")]
 
-    # filter valid categories
-    df = df[df["product_category"].notna()]
+#  map product
+    df["product_category"] = df[product_col].apply(map_product)
 
-    # remove empty narratives
-    df = df[df[narrative_col].notna()]
-    df = df[df[narrative_col].str.strip().ne("")]
-
-
-    df = df.rename(columns={narrative_col: "narrative"})
+    # keep only targets
+    df = df[df["product_category"].isin(TARGET_PRODUCTS)]
 
     return df.reset_index(drop=True)
 
 
-# -----------------------------
-# Clean text
-# -----------------------------
+# =========================================================
+# 5. Clean text
+# =========================================================
 def clean_narrative(text) -> str:
-    """
-    Basic NLP cleaning for complaint text.
-    """
 
     if pd.isna(text):
         return ""
 
     text = str(text).lower()
+    text = _BOILERPLATE.sub(" ", text)
+    text = re.sub(r"\bx{2,}\b", " ", text)
 
-    # remove boilerplate phrases
-    text = _BOILERPLATE.sub("", text)
-
-    # remove repeated x placeholders
-    text = re.sub(r"\bx{2,}\b", "", text, flags=re.IGNORECASE)
-
-    # remove special characters
     text = _SPECIAL_CHARS.sub(" ", text)
-
-    # normalize whitespace
     text = _WHITESPACE.sub(" ", text)
 
     return text.strip()
 
 
-# -----------------------------
-# Preprocess dataset
-# -----------------------------
+# =========================================================
+# 6. Preprocessing pipeline (CLEAN + CONSISTENT)
+# =========================================================
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Clean narratives and generate NLP features.
-    """
 
     df = df.copy()
 
-    # clean text
-    df["clean_narrative"] = df["narrative"].apply(clean_narrative)
+    # IMPORTANT: keep raw column
+    df["clean_narrative"] = df["consumer_complaint_narrative"].apply(clean_narrative)
 
-    # remove very short texts
-    df = df[df["clean_narrative"].str.len() > 20]
-
-    # word count feature
+    # feature engineering
     df["word_count"] = df["clean_narrative"].str.split().str.len()
+
+    # remove very short/noisy text
+    df = df[df["word_count"] > 3]
 
     return df.reset_index(drop=True)
