@@ -105,6 +105,23 @@ Outputs:
 - **Prompt:** analyst template grounded in retrieved excerpts only
 - **Generator:** `google/flan-t5-base` via Hugging Face (`--fallback` for offline extractive summaries)
 
+## Task 4 — Interactive chat UI
+
+Launch the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+**Features:**
+- Natural-language question input with chat history
+- Product category filter (Credit Card, Personal Loan, Savings Account, Money Transfer)
+- Retrieved source excerpts shown below each answer for verification
+- Adjustable `top-k` retrieval count
+- **Clear** button to reset the conversation
+- Optional response streaming for smoother UX
+- Fallback mode when the LLM backend is unavailable
+
 ## Tests
 
 ```bash
