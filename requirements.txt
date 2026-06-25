@@ -19,3 +19,4 @@ streamlit
 
 jupyter
 tqdm
+pytest
