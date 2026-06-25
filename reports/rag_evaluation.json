@@ -2,61 +2,145 @@
   {
     "question": "Why are people unhappy with credit cards?",
     "product_category": "Credit Card",
-    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly credit card statement | [Source 2 | Credit Card | Issue: Billing dispute]\nbilling dispute on credit card not resolved after multiple calls to customer service",
     "sources": [
       {
-        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly credit card statement",
         "metadata": {
           "product_category": "Credit Card",
           "issue": "Fees or interest"
         },
         "distance": 0.08
+      },
+      {
+        "text": "billing dispute on credit card not resolved after multiple calls to customer service",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Billing dispute"
+        },
+        "distance": 0.09
       }
     ]
   },
   {
     "question": "What billing or fee issues do credit card customers report most often?",
     "product_category": "Credit Card",
-    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly credit card statement | [Source 2 | Credit Card | Issue: Billing dispute]\nbilling dispute on credit card not resolved after multiple calls to customer service",
     "sources": [
       {
-        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly credit card statement",
         "metadata": {
           "product_category": "Credit Card",
           "issue": "Fees or interest"
         },
         "distance": 0.08
+      },
+      {
+        "text": "billing dispute on credit card not resolved after multiple calls to customer service",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Billing dispute"
+        },
+        "distance": 0.09
       }
     ]
   },
   {
     "question": "What are the main complaints about personal loans?",
     "product_category": "Personal Loan",
-    "answer": "I don't have enough information in the retrieved complaints to answer: What are the main complaints about personal loans?",
-    "sources": []
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Personal Loan | Issue: Problem when making payments]\npersonal loan payment was applied incorrectly causing late fee and credit score drop | [Source 2 | Personal Loan | Issue: Struggling to pay your loan]\nloan servicer failed to update payment plan after hardship request was approved",
+    "sources": [
+      {
+        "text": "personal loan payment was applied incorrectly causing late fee and credit score drop",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Problem when making payments"
+        },
+        "distance": 0.1
+      },
+      {
+        "text": "loan servicer failed to update payment plan after hardship request was approved",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Struggling to pay your loan"
+        },
+        "distance": 0.12
+      }
+    ]
   },
   {
     "question": "Do personal loan customers report problems with payment processing or servicing?",
     "product_category": "Personal Loan",
-    "answer": "I don't have enough information in the retrieved complaints to answer: Do personal loan customers report problems with payment processing or servicing?",
-    "sources": []
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Personal Loan | Issue: Problem when making payments]\npersonal loan payment was applied incorrectly causing late fee and credit score drop | [Source 2 | Personal Loan | Issue: Struggling to pay your loan]\nloan servicer failed to update payment plan after hardship request was approved",
+    "sources": [
+      {
+        "text": "personal loan payment was applied incorrectly causing late fee and credit score drop",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Problem when making payments"
+        },
+        "distance": 0.1
+      },
+      {
+        "text": "loan servicer failed to update payment plan after hardship request was approved",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Struggling to pay your loan"
+        },
+        "distance": 0.12
+      }
+    ]
   },
   {
     "question": "What issues do customers raise about savings accounts?",
     "product_category": "Savings Account",
-    "answer": "I don't have enough information in the retrieved complaints to answer: What issues do customers raise about savings accounts?",
-    "sources": []
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Savings Account | Issue: Unauthorized transactions]\nunauthorized withdrawal from savings account not reversed after fraud report | [Source 2 | Savings Account | Issue: Closing an account]\nsavings account closed without notice and funds held for weeks",
+    "sources": [
+      {
+        "text": "unauthorized withdrawal from savings account not reversed after fraud report",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Unauthorized transactions"
+        },
+        "distance": 0.11
+      },
+      {
+        "text": "savings account closed without notice and funds held for weeks",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Closing an account"
+        },
+        "distance": 0.13
+      }
+    ]
   },
   {
     "question": "Are savings account customers reporting unauthorized transactions or fraud?",
     "product_category": "Savings Account",
-    "answer": "I don't have enough information in the retrieved complaints to answer: Are savings account customers reporting unauthorized transactions or fraud?",
-    "sources": []
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Savings Account | Issue: Unauthorized transactions]\nunauthorized withdrawal from savings account not reversed after fraud report | [Source 2 | Savings Account | Issue: Closing an account]\nsavings account closed without notice and funds held for weeks",
+    "sources": [
+      {
+        "text": "unauthorized withdrawal from savings account not reversed after fraud report",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Unauthorized transactions"
+        },
+        "distance": 0.11
+      },
+      {
+        "text": "savings account closed without notice and funds held for weeks",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Closing an account"
+        },
+        "distance": 0.13
+      }
+    ]
   },
   {
     "question": "What problems do customers report with money transfers?",
     "product_category": "Money Transfer",
-    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days | [Source 2 | Money Transfer | Issue: Transfer not received]\ninternational remittance sent to wrong recipient with no refund offered",
     "sources": [
       {
         "text": "money transfer failed and funds were not returned after three business days",
@@ -65,16 +149,24 @@
           "issue": "Money was not available"
         },
         "distance": 0.11
+      },
+      {
+        "text": "international remittance sent to wrong recipient with no refund offered",
+        "metadata": {
+          "product_category": "Money Transfer",
+          "issue": "Transfer not received"
+        },
+        "distance": 0.14
       }
     ]
   },
   {
     "question": "Compare common fraud-related complaints across credit cards and money transfers.",
     "product_category": null,
-    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement | [Source 2 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly credit card statement | [Source 2 | Credit Card | Issue: Billing dispute]\nbilling dispute on credit card not resolved after multiple calls to customer service | [Source 3 | Personal Loan | Issue: Problem when making payments]\npersonal loan payment was applied incorrectly causing late fee and credit score drop",
     "sources": [
       {
-        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly credit card statement",
         "metadata": {
           "product_category": "Credit Card",
           "issue": "Fees or interest"
@@ -82,10 +174,34 @@
         "distance": 0.08
       },
       {
-        "text": "money transfer failed and funds were not returned after three business days",
+        "text": "billing dispute on credit card not resolved after multiple calls to customer service",
         "metadata": {
-          "product_category": "Money Transfer",
-          "issue": "Money was not available"
+          "product_category": "Credit Card",
+          "issue": "Billing dispute"
+        },
+        "distance": 0.09
+      },
+      {
+        "text": "personal loan payment was applied incorrectly causing late fee and credit score drop",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Problem when making payments"
+        },
+        "distance": 0.1
+      },
+      {
+        "text": "loan servicer failed to update payment plan after hardship request was approved",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Struggling to pay your loan"
+        },
+        "distance": 0.12
+      },
+      {
+        "text": "unauthorized withdrawal from savings account not reversed after fraud report",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Unauthorized transactions"
         },
         "distance": 0.11
       }
@@ -94,10 +210,10 @@
   {
     "question": "What customer service or communication issues appear across all products?",
     "product_category": null,
-    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement | [Source 2 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly credit card statement | [Source 2 | Credit Card | Issue: Billing dispute]\nbilling dispute on credit card not resolved after multiple calls to customer service | [Source 3 | Personal Loan | Issue: Problem when making payments]\npersonal loan payment was applied incorrectly causing late fee and credit score drop",
     "sources": [
       {
-        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly credit card statement",
         "metadata": {
           "product_category": "Credit Card",
           "issue": "Fees or interest"
@@ -105,10 +221,34 @@
         "distance": 0.08
       },
       {
-        "text": "money transfer failed and funds were not returned after three business days",
+        "text": "billing dispute on credit card not resolved after multiple calls to customer service",
         "metadata": {
-          "product_category": "Money Transfer",
-          "issue": "Money was not available"
+          "product_category": "Credit Card",
+          "issue": "Billing dispute"
+        },
+        "distance": 0.09
+      },
+      {
+        "text": "personal loan payment was applied incorrectly causing late fee and credit score drop",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Problem when making payments"
+        },
+        "distance": 0.1
+      },
+      {
+        "text": "loan servicer failed to update payment plan after hardship request was approved",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Struggling to pay your loan"
+        },
+        "distance": 0.12
+      },
+      {
+        "text": "unauthorized withdrawal from savings account not reversed after fraud report",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Unauthorized transactions"
         },
         "distance": 0.11
       }
@@ -117,10 +257,10 @@
   {
     "question": "Which product category shows the strongest signs of repeated billing disputes?",
     "product_category": null,
-    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement | [Source 2 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly credit card statement | [Source 2 | Credit Card | Issue: Billing dispute]\nbilling dispute on credit card not resolved after multiple calls to customer service | [Source 3 | Personal Loan | Issue: Problem when making payments]\npersonal loan payment was applied incorrectly causing late fee and credit score drop",
     "sources": [
       {
-        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly credit card statement",
         "metadata": {
           "product_category": "Credit Card",
           "issue": "Fees or interest"
@@ -128,10 +268,34 @@
         "distance": 0.08
       },
       {
-        "text": "money transfer failed and funds were not returned after three business days",
+        "text": "billing dispute on credit card not resolved after multiple calls to customer service",
         "metadata": {
-          "product_category": "Money Transfer",
-          "issue": "Money was not available"
+          "product_category": "Credit Card",
+          "issue": "Billing dispute"
+        },
+        "distance": 0.09
+      },
+      {
+        "text": "personal loan payment was applied incorrectly causing late fee and credit score drop",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Problem when making payments"
+        },
+        "distance": 0.1
+      },
+      {
+        "text": "loan servicer failed to update payment plan after hardship request was approved",
+        "metadata": {
+          "product_category": "Personal Loan",
+          "issue": "Struggling to pay your loan"
+        },
+        "distance": 0.12
+      },
+      {
+        "text": "unauthorized withdrawal from savings account not reversed after fraud report",
+        "metadata": {
+          "product_category": "Savings Account",
+          "issue": "Unauthorized transactions"
         },
         "distance": 0.11
       }

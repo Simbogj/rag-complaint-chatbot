@@ -63,16 +63,52 @@ EVALUATION_QUESTIONS = [
 
 MOCK_SOURCES = [
     RetrievedChunk(
-        text="customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        text="customer reported unauthorized fees and incorrect interest charges on monthly credit card statement",
         metadata={"product_category": "Credit Card", "issue": "Fees or interest"},
         distance=0.08,
-        id="mock_0",
+        id="mock_cc_0",
+    ),
+    RetrievedChunk(
+        text="billing dispute on credit card not resolved after multiple calls to customer service",
+        metadata={"product_category": "Credit Card", "issue": "Billing dispute"},
+        distance=0.09,
+        id="mock_cc_1",
+    ),
+    RetrievedChunk(
+        text="personal loan payment was applied incorrectly causing late fee and credit score drop",
+        metadata={"product_category": "Personal Loan", "issue": "Problem when making payments"},
+        distance=0.10,
+        id="mock_pl_0",
+    ),
+    RetrievedChunk(
+        text="loan servicer failed to update payment plan after hardship request was approved",
+        metadata={"product_category": "Personal Loan", "issue": "Struggling to pay your loan"},
+        distance=0.12,
+        id="mock_pl_1",
+    ),
+    RetrievedChunk(
+        text="unauthorized withdrawal from savings account not reversed after fraud report",
+        metadata={"product_category": "Savings Account", "issue": "Unauthorized transactions"},
+        distance=0.11,
+        id="mock_sa_0",
+    ),
+    RetrievedChunk(
+        text="savings account closed without notice and funds held for weeks",
+        metadata={"product_category": "Savings Account", "issue": "Closing an account"},
+        distance=0.13,
+        id="mock_sa_1",
     ),
     RetrievedChunk(
         text="money transfer failed and funds were not returned after three business days",
         metadata={"product_category": "Money Transfer", "issue": "Money was not available"},
         distance=0.11,
-        id="mock_1",
+        id="mock_mt_0",
+    ),
+    RetrievedChunk(
+        text="international remittance sent to wrong recipient with no refund offered",
+        metadata={"product_category": "Money Transfer", "issue": "Transfer not received"},
+        distance=0.14,
+        id="mock_mt_1",
     ),
 ]
 
