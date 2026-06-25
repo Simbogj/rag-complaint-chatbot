@@ -54,8 +54,33 @@ _SPECIAL_CHARS = re.compile(r"[^a-z0-9\s]")
 _WHITESPACE = re.compile(r"\s+")
 
 
+<<<<<<< HEAD
 def normalize_columns(columns: pd.Index) -> pd.Index:
     return columns.str.strip().str.lower().str.replace(" ", "_")
+=======
+# =========================================================
+# 3. Memory-safe loader
+# =========================================================
+def load_dataset(path: str, chunksize: int = 10000) -> pd.DataFrame:
+
+    required_cols = ["product", "consumer_complaint_narrative"]
+    optional_cols = ["complaint_id"]
+    chunks = []
+
+    for chunk in pd.read_csv(path, chunksize=chunksize, dtype=str, low_memory=True):
+
+        chunk.columns = (
+            chunk.columns.str.strip().str.lower().str.replace(" ", "_")
+        )
+
+        if not all(col in chunk.columns for col in required_cols):
+            continue
+
+        keep_cols = required_cols + [c for c in optional_cols if c in chunk.columns]
+        chunks.append(chunk[keep_cols])
+
+    return pd.concat(chunks, ignore_index=True) if chunks else pd.DataFrame()
+>>>>>>> task-2/chunking-embeddings
 
 
 def map_product(product: str | float | None) -> str | None:

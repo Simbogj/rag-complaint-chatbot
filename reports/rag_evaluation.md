@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RAG Evaluation Report
 
 _Generated: 2026-06-25 13:38 UTC_
@@ -22,3 +23,12 @@ _Generated: 2026-06-25 13:38 UTC_
 - **Strengths:** Add notes on retrieval relevance and answer grounding after review.
 - **Weaknesses:** Add notes on hallucinations, missing filters, or vague synthesis.
 - **Improvements:** Tune `top_k`, chunk overlap, prompt constraints, or LLM choice.
+=======
+# RAG Evaluation (template)
+
+Run `python -m src.evaluate_rag` to populate this file with live pipeline outputs.
+
+| Question | Generated Answer | Retrieved Sources | Quality (1-5) | Comments |
+| --- | --- | --- | --- | --- |
+| Why are customers unhappy with credit cards? | TBD | TBD | TBD | Run evaluation script |
+>>>>>>> task-2/chunking-embeddings

@@ -8,6 +8,7 @@ sentence-transformers
 
 langchain
 langchain-community
+langchain-text-splitters
 
 chromadb
 faiss-cpu
