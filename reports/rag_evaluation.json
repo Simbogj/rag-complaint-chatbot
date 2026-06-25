@@ -1,0 +1,140 @@
+[
+  {
+    "question": "Why are people unhappy with credit cards?",
+    "product_category": "Credit Card",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement",
+    "sources": [
+      {
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Fees or interest"
+        },
+        "distance": 0.08
+      }
+    ]
+  },
+  {
+    "question": "What billing or fee issues do credit card customers report most often?",
+    "product_category": "Credit Card",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement",
+    "sources": [
+      {
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Fees or interest"
+        },
+        "distance": 0.08
+      }
+    ]
+  },
+  {
+    "question": "What are the main complaints about personal loans?",
+    "product_category": "Personal Loan",
+    "answer": "I don't have enough information in the retrieved complaints to answer: What are the main complaints about personal loans?",
+    "sources": []
+  },
+  {
+    "question": "Do personal loan customers report problems with payment processing or servicing?",
+    "product_category": "Personal Loan",
+    "answer": "I don't have enough information in the retrieved complaints to answer: Do personal loan customers report problems with payment processing or servicing?",
+    "sources": []
+  },
+  {
+    "question": "What issues do customers raise about savings accounts?",
+    "product_category": "Savings Account",
+    "answer": "I don't have enough information in the retrieved complaints to answer: What issues do customers raise about savings accounts?",
+    "sources": []
+  },
+  {
+    "question": "Are savings account customers reporting unauthorized transactions or fraud?",
+    "product_category": "Savings Account",
+    "answer": "I don't have enough information in the retrieved complaints to answer: Are savings account customers reporting unauthorized transactions or fraud?",
+    "sources": []
+  },
+  {
+    "question": "What problems do customers report with money transfers?",
+    "product_category": "Money Transfer",
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "sources": [
+      {
+        "text": "money transfer failed and funds were not returned after three business days",
+        "metadata": {
+          "product_category": "Money Transfer",
+          "issue": "Money was not available"
+        },
+        "distance": 0.11
+      }
+    ]
+  },
+  {
+    "question": "Compare common fraud-related complaints across credit cards and money transfers.",
+    "product_category": null,
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement | [Source 2 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "sources": [
+      {
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Fees or interest"
+        },
+        "distance": 0.08
+      },
+      {
+        "text": "money transfer failed and funds were not returned after three business days",
+        "metadata": {
+          "product_category": "Money Transfer",
+          "issue": "Money was not available"
+        },
+        "distance": 0.11
+      }
+    ]
+  },
+  {
+    "question": "What customer service or communication issues appear across all products?",
+    "product_category": null,
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement | [Source 2 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "sources": [
+      {
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Fees or interest"
+        },
+        "distance": 0.08
+      },
+      {
+        "text": "money transfer failed and funds were not returned after three business days",
+        "metadata": {
+          "product_category": "Money Transfer",
+          "issue": "Money was not available"
+        },
+        "distance": 0.11
+      }
+    ]
+  },
+  {
+    "question": "Which product category shows the strongest signs of repeated billing disputes?",
+    "product_category": null,
+    "answer": "Based on the retrieved complaint excerpts, customers frequently report issues related to your question. Representative excerpts: [Source 1 | Credit Card | Issue: Fees or interest]\ncustomer reported unauthorized fees and incorrect interest charges on monthly statement | [Source 2 | Money Transfer | Issue: Money was not available]\nmoney transfer failed and funds were not returned after three business days",
+    "sources": [
+      {
+        "text": "customer reported unauthorized fees and incorrect interest charges on monthly statement",
+        "metadata": {
+          "product_category": "Credit Card",
+          "issue": "Fees or interest"
+        },
+        "distance": 0.08
+      },
+      {
+        "text": "money transfer failed and funds were not returned after three business days",
+        "metadata": {
+          "product_category": "Money Transfer",
+          "issue": "Money was not available"
+        },
+        "distance": 0.11
+      }
+    ]
+  }
+]

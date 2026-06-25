@@ -21,4 +21,10 @@ streamlit
 
 jupyter
 tqdm
+<<<<<<< HEAD
 pytest
+=======
+pyarrow
+
+accelerate
+>>>>>>> task-3/rag-pipeline
