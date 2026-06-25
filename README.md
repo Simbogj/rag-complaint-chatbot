@@ -60,6 +60,24 @@ python -m src.build_vector_store --dry-run   # sample + chunk only, no embedding
 - **Chunking:** 500 characters with 50-character overlap (matches the pre-built full-scale index spec).
 - **Embeddings:** `sentence-transformers/all-MiniLM-L6-v2` — fast, 384-dim, strong semantic search for short-to-medium financial text.
 
+## Task 3 — RAG core & evaluation
+
+Uses the pre-built parquet embeddings indexed into `vector_store/prebuilt_chromadb/`:
+
+```bash
+python -m src.evaluate_rag --max-chunks 5000
+```
+
+**Modules:** `src/retriever.py`, `src/prompts.py`, `src/generator.py`, `src/rag.py`
+
+## Task 4 — Chat UI
+
+```bash
+streamlit run app.py
+```
+
+The UI shows generated answers with expandable source excerpts and a product-category filter.
+
 ## Tests
 
 ```bash

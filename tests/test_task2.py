@@ -47,3 +47,11 @@ def test_chunk_text_respects_size_limit() -> None:
     text = "a" * 1200
     chunks = chunk_text(text, chunk_size=500, chunk_overlap=50)
     assert all(len(chunk.text) <= 500 for chunk in chunks)
+
+
+def test_chunk_text_applies_overlap() -> None:
+    text = "word " * 400
+    chunks = chunk_text(text, chunk_size=200, chunk_overlap=40)
+    assert len(chunks) >= 2
+    overlap_region = chunks[0].text[-40:].strip()
+    assert overlap_region and overlap_region in chunks[1].text

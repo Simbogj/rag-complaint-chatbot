@@ -58,6 +58,7 @@ _WHITESPACE = re.compile(r"\s+")
 def load_dataset(path: str, chunksize: int = 10000) -> pd.DataFrame:
 
     required_cols = ["product", "consumer_complaint_narrative"]
+    optional_cols = ["complaint_id"]
     chunks = []
 
     for chunk in pd.read_csv(path, chunksize=chunksize, dtype=str, low_memory=True):
@@ -69,7 +70,8 @@ def load_dataset(path: str, chunksize: int = 10000) -> pd.DataFrame:
         if not all(col in chunk.columns for col in required_cols):
             continue
 
-        chunks.append(chunk[required_cols])
+        keep_cols = required_cols + [c for c in optional_cols if c in chunk.columns]
+        chunks.append(chunk[keep_cols])
 
     return pd.concat(chunks, ignore_index=True) if chunks else pd.DataFrame()
 
