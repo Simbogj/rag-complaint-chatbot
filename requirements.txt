@@ -21,3 +21,6 @@ streamlit
 
 jupyter
 tqdm
+pyarrow
+
+accelerate

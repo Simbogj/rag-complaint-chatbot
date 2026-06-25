@@ -60,6 +60,51 @@ python -m src.build_vector_store --dry-run   # sample + chunk only, no embedding
 - **Chunking:** 500 characters with 50-character overlap (matches the pre-built full-scale index spec).
 - **Embeddings:** `sentence-transformers/all-MiniLM-L6-v2` — fast, 384-dim, strong semantic search for short-to-medium financial text.
 
+## Task 3 — RAG pipeline & evaluation
+
+### Load pre-built full-scale vector store (recommended for Tasks 3–4)
+
+Place `complaint_embeddings.parquet` in `data/` and load it into ChromaDB:
+
+```bash
+python -m src.load_prebuilt_store
+```
+
+Or use the Task 2 index at `vector_store/chromadb/` after running `python -m src.build_vector_store`.
+
+### Ask questions programmatically
+
+```python
+from src.rag import RAGPipeline
+
+pipeline = RAGPipeline(use_fallback=False)
+response = pipeline.ask(
+    "Why are people unhappy with credit cards?",
+    product_category="Credit Card",
+    top_k=5,
+)
+print(response.answer)
+for source in response.sources:
+    print(source.metadata, source.text[:120])
+```
+
+### Run qualitative evaluation
+
+```bash
+python -m src.evaluate_rag --fallback
+python -m src.evaluate_rag --mock --fallback   # offline demo without vector store / torch
+python -m src.evaluate_rag --output reports/rag_evaluation.md
+```
+
+Outputs:
+- `reports/rag_evaluation.md` — evaluation table for your final report
+- `reports/rag_evaluation.json` — raw answers and retrieved sources
+
+**RAG components:**
+- **Retriever:** embeds queries with `all-MiniLM-L6-v2`, searches ChromaDB (cosine similarity, `top_k=5`)
+- **Prompt:** analyst template grounded in retrieved excerpts only
+- **Generator:** `google/flan-t5-base` via Hugging Face (`--fallback` for offline extractive summaries)
+
 ## Tests
 
 ```bash
