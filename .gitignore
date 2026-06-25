@@ -5,6 +5,7 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.pyc
 
 # virtual environments
 venv/
@@ -18,16 +19,19 @@ venv/
 .ipynb_checkpoints/
 
 # =========================
-# Data (CRITICAL for ML projects)
+# Data (never commit large datasets)
 # =========================
 data/raw/
 data/processed/
-
+data/*.csv
+data/**/*.csv
 *.parquet
 *.pkl
 
-# ⚠️ DO NOT ignore all CSV unless you are 100% sure
-# *.csv   <-- removed intentionally
+# =========================
+# Vector store (generated locally)
+# =========================
+vector_store/chromadb/
 
 # =========================
 # Logs
@@ -62,7 +66,7 @@ models/
 *.joblib
 
 # =========================
-# Outputs
+# Outputs / plots (regenerate from notebook)
 # =========================
 *.png
 *.jpg
